@@ -29,7 +29,9 @@ except Exception as e:
     print(f"Error initializing recipes directory: {str(e)}")
 
 # Initialize FastMCP server
-mcp = FastMCP("recipe_research")
+mcp = FastMCP(
+    "recipe_research", host="0.0.0.0", port="8000"
+)  # add port and host for deployment!!
 
 
 @mcp.tool()
@@ -866,6 +868,21 @@ def generate_cultural_cuisine_prompt(
 Present your exploration as a cultural culinary journey that respects and celebrates the heritage of {cuisine_name} cuisine while providing practical cooking knowledge."""
 
 
+# if __name__ == "__main__":
+#     # Initialize and run the server -- Locally for testing
+#     mcp.run(transport="stdio")
+
+
+# MCP SERVER STARTUP
+# This section configures and starts the MCP server
 if __name__ == "__main__":
-    # Initialize and run the server
-    mcp.run(transport="stdio")
+    # Get port from environment variable (used by deployment platforms like DigitalOcean)
+    port = int(os.environ.get("PORT", 8000))
+
+    # Start the MCP server with HTTP transport
+    # - transport="streamable-http": Uses HTTP for communication with MCP clients
+    # - host="0.0.0.0": Accepts connections from any IP (needed for remote deployment)
+    # - port: The port to listen on
+    # - log_level="debug": Enables detailed logging for development
+    # mcp.run(transport="streamable-http", host="0.0.0.0", port=port, log_level="debug")
+    mcp.run(transport="streamable-http")

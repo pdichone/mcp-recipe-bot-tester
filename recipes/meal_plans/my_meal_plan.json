@@ -1,13 +1,13 @@
 {
   "plan_name": "My Meal Plan",
-  "created_date": "sys.version_info(major=3, minor=12, micro=2, releaselevel='final', serial=0)",
+  "created_date": "2025-08-04T15:24:11.245920",
   "total_recipes": 1,
   "recipes": [
     {
-      "id": "52771",
-      "name": "Spicy Arrabiata Penne",
+      "id": "52775",
+      "name": "Vegan Lasagna",
       "cuisine": "Italian",
-      "category": "Vegetarian"
+      "category": "Vegan"
     }
   ]
 }
