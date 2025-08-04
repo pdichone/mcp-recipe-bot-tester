@@ -1,0 +1,13 @@
+{
+  "plan_name": "My Meal Plan",
+  "created_date": "sys.version_info(major=3, minor=12, micro=2, releaselevel='final', serial=0)",
+  "total_recipes": 1,
+  "recipes": [
+    {
+      "id": "52771",
+      "name": "Spicy Arrabiata Penne",
+      "cuisine": "Italian",
+      "category": "Vegetarian"
+    }
+  ]
+}
