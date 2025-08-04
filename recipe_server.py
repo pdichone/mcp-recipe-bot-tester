@@ -28,9 +28,12 @@ try:
 except Exception as e:
     print(f"Error initializing recipes directory: {str(e)}")
 
+# ==================== MCP SERVER SETUP ====================
+port = int(os.environ.get("PORT", 8000))
+# ==== MCP Server Initialization ===
 # Initialize FastMCP server
 mcp = FastMCP(
-    "recipe_research", host="0.0.0.0", port="8000"
+    "recipe_research", host="0.0.0.0", port=port
 )  # add port and host for deployment!!
 
 
@@ -877,7 +880,7 @@ Present your exploration as a cultural culinary journey that respects and celebr
 # This section configures and starts the MCP server
 if __name__ == "__main__":
     # Get port from environment variable (used by deployment platforms like DigitalOcean)
-    port = int(os.environ.get("PORT", 8000))
+    
 
     # Start the MCP server with HTTP transport
     # - transport="streamable-http": Uses HTTP for communication with MCP clients
